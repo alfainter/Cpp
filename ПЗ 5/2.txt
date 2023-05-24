@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int factorial(int P)
+{
+	int S = 1;
+	for(int i=1; i<=P; ++i)
+	{
+		S *= i;
+	}
+	return F;
+}
+int main()
+{
+	int P;
+	cout << "P = ";
+	cin >> P;	
+	if(P >= 0)
+	{
+		cout << factorial(N); 
+	}
+	else
+	{
+		cout << "Error: P < 0.";
+	}
+	return 0;

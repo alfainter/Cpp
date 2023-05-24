@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << "exercise 3:\n";
+	int a, b, h;
+	int y = 0;
+
+	cout << "Enter a:";
+	cin >> a;
+
+	cout << "Enter b:";
+	cin >> b;
+
+	cout << "Enter h:";
+	cin >> h;
+
+	for (int x = a; x <= b; x += h) {
+		if (x + 5 != 0) {
+			y = pow(5 * (x), 3) + sqrt(-x + 6);
+			cout << "-----------------------:\n";
+			cout << ":   X :        Y       :\n";
+			cout << "-----------------------:\n";
+			cout << ":   " << x << " : " << y << "      :\n";
+			cout << "-----------------------:\n";
+		}
+		else {
+			cout << "Invalid value for x";
+		}
+	}
+	return 0;
+
+}

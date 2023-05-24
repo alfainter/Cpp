@@ -1,0 +1,26 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main() {
+    // Текущая дата и время
+    time_t now = time(nullptr);
+    tm* now_tm = localtime(&now);
+    
+    // Дата и время 25.11.2004
+    tm start_tm = {0};
+    start_tm.tm_year = 2004 - 1900;
+    start_tm.tm_mon = 10; // Ноябрь (отсчёт месяцев начинается с 0)
+    start_tm.tm_mday = 25;
+    time_t start = mktime(&start_tm);
+    
+    // Разность в секундах между двумя датами
+    double seconds = difftime(now, start);
+    
+    // Количество дней между двумя датами
+    int days = static_cast<int>(seconds / 86400);
+    
+    cout << "Количество дней с 25.11.2004 до сегодняшней даты: " << days << endl;
+    
+    return 0;
+}
