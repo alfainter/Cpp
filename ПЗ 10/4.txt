@@ -1,0 +1,54 @@
+#include <iostream>
+#include <math.h>
+#include <cmath>
+using namespace std;
+
+int main(void) {
+    
+    const int size = 12;
+    int m[size] = {3,-4,9,69,12,85,9,7,13,-5,18,-7};
+    
+    for (int i = 0; i < size; i++)
+    {
+        cout << m[i] << " ";
+    }
+    cout << endl;
+    
+    int input;
+    cout << "enter a number: ";
+    cin >> input;
+
+    for (int i = 0; i < size; i++)
+    {
+        if (m[i] > input)
+        {
+            cout << m[i] << " ";
+        }
+    } 
+  Завдання 6
+    #include <iostream>
+#include <math.h>
+#include <cmath>
+using namespace std;
+
+int main(void) {
+
+    const int size = 12;
+    int m[size] = { 1,66,6,27,5,-13,0,22,16,-4,11,4 };
+    bool nul = false;
+
+    for (int i = 0; i < 12; i++)
+    {
+        if (m[i] == 0)
+        {
+            cout << "zero is at number: " << i + 1 << endl;
+            nul = true;
+        }
+    }
+
+    if (!nul)
+    {
+        cout << "has no zeros" << endl;
+    }
+}
+  
