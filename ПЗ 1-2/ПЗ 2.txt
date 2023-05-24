@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matrix[10][10] = {};
+
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            *(*(matrix + i) + j) = (i + 1) * (j + 1);
+        }
+    }
+
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            cout.width(4);
+            cout << matrix[i][j];
+        }
+        cout << endl;
+    }
+
+    cout << "Elements on the main diagonal:" << endl;
+    for (int i = 0; i < 10; i++) {
+        cout << *(*(matrix + i) + i) << " ";
+    }
+    cout << endl;
+
+    cout << "Elements on the secondary diagonal:" << endl;
+    for (int i = 0; i < 10; i++) {
+        cout << *(*(matrix + i) + (9 - i)) << " ";
+    }
+    cout << endl;
+
+    int even_count = 0, odd_count = 0;
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (*(*(matrix + i) + j) % 2 == 0) {
+                even_count++;
+            }
+            else {
+                odd_count++;
+            }
+        }
+    }
+    cout << "Number of even : " << even_count << endl;
+    cout << "Number of odd  : " << odd_count << endl;
+
+    return 0;
+}
