@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int a;
+    int b;
+    int c;
+    int d;
+
+    cin >> a;
+    cin >> b;
+
+    c = a / a;
+    d = a / b;
+
+    if (c == d) {
+
+        cout << "Results are equal (by 0.000001 epsilon)";
+    }
+
+    else {
+
+        cout << "Results are not equal (by 0.000001 epsilon)";
+    }
+}

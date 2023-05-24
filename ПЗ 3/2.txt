@@ -1,0 +1,62 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int** matrix = new int* [3];  // создаем массив указателей
+
+    // создаем вложенные массивы и заполняем случайными числами
+    for (int i = 0; i < 3; i++) {
+        matrix[i] = new int[3];
+        for (int j = 0; j < 3; j++) {
+            matrix[i][j] = rand() % 10/2;  // генерируем случайное число от 0 до 9
+        }
+    }
+
+    // вывод матрицы на экран
+    cout << "Matrix:" << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout.width(4);
+            cout << matrix[i][j];
+        }
+        cout << endl;
+    }
+
+    // вывод элементов на главной диагонали
+    cout << "Elements on the main diagonal:" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << matrix[i][i] << " ";
+    }
+    cout << endl;
+
+    // вывод элементов на побочной диагонали
+    cout << "Elements on the secondary diagonal:" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << matrix[i][2 - i] << " ";
+    }
+    cout << endl;
+
+    // подсчет количества четных и нечетных элементов
+    int even_count = 0, odd_count = 0;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (matrix[i][j] % 2 == 0) {
+                even_count++;
+            }
+            else {
+                odd_count++;
+            }
+        }
+    }
+    cout << "Number of even elements: " << even_count << endl;
+    cout << "Number of odd elements: " << odd_count << endl;
+
+    // освобождение памяти
+    for (int i = 0; i < 3; i++) {
+        delete[] matrix[i];
+    }
+    delete[] matrix;
+
+    return 0;
+}
